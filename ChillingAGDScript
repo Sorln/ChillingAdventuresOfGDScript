@@ -1,0 +1,212 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Chilling Adventures Of Greendale     (Sorln#3037)", "BloodTheme")
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Let's Change ur Appearance <3")
+Section:NewButton("White Eyes On", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").EyesOn:FireServer()
+end)
+Section:NewButton("White Eyes Off", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").EyesOff:FireServer()
+end)
+Section:NewButton("Fire Hands On", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").fireon:FireServer()
+end)
+Section:NewButton("Fire Hands Off", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").fireoff:FireServer()
+end)
+Section:NewButton("No Face (may glitch you out its 50/50)", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").turn:FireServer()
+end)
+local Tab = Window:NewTab("Power add")
+local Section = Tab:NewSection("Give's you powers that are linked to keybinds :D")
+Section:NewButton("Sabrina M Void Ability Keybind: X ", "ButtonInfo", function()
+    print("Clicked")
+    local l__LocalPlayer__1 = game.Players.LocalPlayer;
+local l__MaxMagic__2 = l__LocalPlayer__1.Magic.MaxMagic;
+local l__ReplicatedStorage__3 = game:GetService("ReplicatedStorage");
+local l__UserInputService__4 = game:GetService("UserInputService");
+local u1 = true;
+local u2 = l__LocalPlayer__1.Character or l__LocalPlayer__1.CharacterAdded:Wait();
+local l__mouse__3 = l__LocalPlayer__1:GetMouse();
+local l__Magic__4 = l__LocalPlayer__1.Magic.Magic;
+local l__takevoid__5 = l__ReplicatedStorage__3.Events.takemagic.takevoid;
+local l__Void__6 = l__ReplicatedStorage__3:WaitForChild("Void");
+game:GetService("UserInputService").InputBegan:Connect(function(p1, p2)
+	if p1.KeyCode == Enum.KeyCode.X and not p2 and u1 == true and u2.Humanoid.Health > 0 and l__mouse__3.Target.Parent:FindFirstChildOfClass("Humanoid") then
+		u1 = false;
+		if l__Magic__4.Value >= 400 then
+			l__takevoid__5:FireServer();
+			l__Void__6:FireServer(l__mouse__3.Target);
+			local v5 = Instance.new("Animation");
+			v5.AnimationId = "http://www.roblox.com/asset/?id=7514256760";
+			u2:WaitForChild("Humanoid"):LoadAnimation(v5):Play();
+			wait(60);
+			u1 = true;
+		end;
+	end;
+end);
+end)
+Section:NewButton("Lilith Shadow Keybind: C", "ButtonInfo", function()
+    print("Clicked")
+wait();
+local l__LocalPlayer__1 = game:GetService("Players").LocalPlayer;
+local l__MaxMagic__2 = l__LocalPlayer__1.Magic.MaxMagic;
+local u1 = true;
+local l__Magic__2 = l__LocalPlayer__1.Magic.Magic;
+local l__takeboil__3 = game.ReplicatedStorage.Events.takemagic.takeboil;
+local l__CurrentCamera__4 = workspace.CurrentCamera;
+local l__TweenService__5 = game:GetService("TweenService");
+local l__shadow__6 = game.ReplicatedStorage.shadow;
+game:GetService("UserInputService").InputBegan:Connect(function(p1, p2)
+	if p1.KeyCode == Enum.KeyCode.C and not p2 and u1 == true and l__LocalPlayer__1.Character.Humanoid.Health > 0 and l__Magic__2.Value >= 150 then
+		l__takeboil__3:FireServer();
+		local v3 = Instance.new("BlurEffect");
+		v3.Size = 0;
+		v3.Parent = l__CurrentCamera__4;
+		l__TweenService__5:Create(v3, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {
+			Size = 50
+		}):Play();
+		wait(0.4);
+		l__shadow__6:FireServer();
+		wait(0.3);
+		v3:Destroy();
+		u1 = false;
+		wait(60);
+		u1 = true;
+	end;
+end);
+
+end)
+Section:NewButton("Angel Beam Keybind: Z", "ButtonInfo", function()
+    print("Clicked")
+    local l__LocalPlayer__1 = game.Players.LocalPlayer;
+local l__MaxMagic__2 = l__LocalPlayer__1.Magic.MaxMagic;
+local l__ReplicatedStorage__3 = game:GetService("ReplicatedStorage");
+local l__UserInputService__4 = game:GetService("UserInputService");
+local u1 = true;
+local u2 = l__LocalPlayer__1.Character or l__LocalPlayer__1.CharacterAdded:Wait();
+local l__mouse__3 = l__LocalPlayer__1:GetMouse();
+local l__Magic__4 = l__LocalPlayer__1.Magic.Magic;
+local l__takedeath__5 = l__ReplicatedStorage__3.Events.takemagic.takedeath;
+local l__angelbeam__6 = l__ReplicatedStorage__3:WaitForChild("angelbeam");
+game:GetService("UserInputService").InputBegan:Connect(function(p1, p2)
+	if p1.KeyCode == Enum.KeyCode.Z and not p2 and u1 == true and u2.Humanoid.Health > 0 and l__mouse__3.Target.Parent:FindFirstChildOfClass("Humanoid") then
+		u1 = false;
+		if l__Magic__4.Value >= 300 then
+			l__takedeath__5:FireServer();
+			l__angelbeam__6:FireServer(l__mouse__3.Target);
+			wait(60);
+			u1 = true;
+		end;
+	end;
+end);
+end)
+Section:NewButton("Sabrina M Levi Keybind: V ", "ButtonInfo", function()
+    print("Clicked")
+  local l__LocalPlayer__1 = game:GetService("Players").LocalPlayer;
+local l__MaxMagic__2 = l__LocalPlayer__1.Magic.MaxMagic;
+local v3 = l__LocalPlayer__1.Character or l__LocalPlayer__1.CharacterAdded:Wait();
+local v4 = Instance.new("Animation");
+v4.AnimationId = "http://www.roblox.com/asset/?id=7401680791";
+v4.Name = "levi";
+local l__UserInputService__5 = game:GetService("UserInputService");
+local l__Magic__1 = l__LocalPlayer__1.Magic.Magic;
+local u2 = true;
+local l__takeboil__3 = game.ReplicatedStorage.Events.takemagic.takeboil;
+local l__Humanoid__4 = v3:WaitForChild("Humanoid");
+l__UserInputService__5.InputBegan:connect(function(p1, p2)
+	if p1.KeyCode == Enum.KeyCode.V and l__Magic__1.Value >= 150 and u2 == true and not p2 then
+		u2 = false;
+		l__takeboil__3:FireServer();
+		v3:WaitForChild("Humanoid"):LoadAnimation(v4):Play();
+		l__Humanoid__4.HipHeight = 6;
+	end;
+end);
+l__UserInputService__5.InputEnded:connect(function(p3, p4)
+	if p3.KeyCode == Enum.KeyCode.J and not p4 then
+		for v6, v7 in pairs((l__Humanoid__4:GetPlayingAnimationTracks())) do
+			if v7.Name == "levi" then
+				v7:Stop();
+				l__Humanoid__4.HipHeight = 1.974;
+				wait(30);
+				u2 = true;
+			end;
+		end;
+	end;
+end);
+end)
+Section:NewButton("Angel heal No Keybind just Click", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").angelheal:FireServer()
+end)
+local Tab = Window:NewTab("Free GP Characters")
+local Section = Tab:NewSection("Dont spend your money on GP get it for free :D")
+Section:NewButton("Sabrina M", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "SabrinaM"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Lucifer", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Lucifer"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Lilith", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Lilith"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Prudence", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Prudence"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Agatha Night", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Agatha"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Dorcas Night", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Dorcas"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Pan", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Pan"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
+Section:NewButton("Jerathmiel", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "Jerathmiel"
+}
+
+game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
+end)
