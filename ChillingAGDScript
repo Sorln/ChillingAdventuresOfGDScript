@@ -212,7 +212,7 @@ game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(ar
 end)
 local Tab = Window:NewTab("Items")
 local Section = Tab:NewSection("Get the stuff you want")
-Section:NewButton("Dorcas Night", "ButtonInfo", function()
+Section:NewButton("Spear", "ButtonInfo", function()
     print("Clicked")
     local player = game.Players.LocalPlayer
 
