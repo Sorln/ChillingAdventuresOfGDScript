@@ -210,3 +210,12 @@ Section:NewButton("Jerathmiel", "ButtonInfo", function()
 
 game:GetService("ReplicatedStorage").characterChangeRequest:FireServer(unpack(args))
 end)
+local Tab = Window:NewTab("Items")
+local Section = Tab:NewSection("Get the stuff you want")
+Section:NewButton("Dorcas Night", "ButtonInfo", function()
+    print("Clicked")
+    local player = game.Players.LocalPlayer
+
+local rl = game.ReplicatedStorage.Characters.Jerathmiel.Spear:Clone()
+rl.Parent = player.Backpack
+end)
